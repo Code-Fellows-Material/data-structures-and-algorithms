@@ -302,7 +302,7 @@ const characters = [
 
 const extractChildren = (arr) => {
   let newArray = [];
-  newArray = arr.filter((character) => character.name.includes('a')).reduce((acc, val) => val.children ? acc = [...acc, ...val.children] : acc,[]);
+  newArray = arr.filter((character) => character.name.includes('a')).reduce((acc, val) => val.children ? acc = [...acc, ...val.children] : acc, []);
   return newArray;
 }
 
