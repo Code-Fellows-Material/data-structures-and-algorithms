@@ -59,7 +59,8 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
+const updateNumbers = (obj) => 
+{
   return Object.entries(obj).map(entry => `${entry[0]}: ${entry[1]}`)
 };
 
