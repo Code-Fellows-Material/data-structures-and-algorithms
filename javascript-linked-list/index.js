@@ -1,3 +1,5 @@
+
+
 class Node {
   constructor(data, next = null) {
     this.data = data;
@@ -53,7 +55,8 @@ class LinkedList {
   insertAtIndex(data, index) {
     // If index is out of range
     if (index < 0 || index > this.size) {
-      return -1;
+      console.error('index out of range');
+      return;
     }
     // If index is 0
     if (index === 0) {
@@ -84,9 +87,14 @@ class LinkedList {
     let current = this.head;
     let count = 0;
 
+    if (index < 0 || index > this.size) {
+      console.error('index out of range');
+      return;
+    }
+
     while (current) {
       if (count === index) {
-        console.log(current.data);
+        return current.data;
       }
       current = current.next;
       count++;
@@ -97,6 +105,7 @@ class LinkedList {
   //Remove at index
   removeAt(index) {
     if (index < 0 || index > this.size) {
+      console.error('index out of range');
       return;
     }
 
@@ -139,13 +148,4 @@ class LinkedList {
   }
 }
 
-const ll = new LinkedList();
-
-ll.insertFirst(100);
-ll.insertFirst(200);
-ll.insertFirst(300);
-ll.insertLast(400);
-// ll.getAt(3);
-console.log(ll.includes(1000));
-ll.printToString();
-
+module.exports = LinkedList;
