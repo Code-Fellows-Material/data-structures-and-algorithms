@@ -19,8 +19,8 @@ class LinkedList {
     let found = false;
 
     while (current && !found) {
-        if (data == current.data) found = true;
-        current = current.next;
+      if (data == current.data) found = true;
+      current = current.next;
     }
 
     return found;
@@ -33,7 +33,7 @@ class LinkedList {
   }
 
   // Insert Last Node
-  insertLast(data) {
+  append(data) {
     let node = new Node(data);
     let current;
 
@@ -49,6 +49,54 @@ class LinkedList {
       current.next = node;
     }
     this.size++;
+  }
+
+  // Insert Before a node with value
+  insertBefore(value, data) {
+    // If index is out of range
+    if (!value) {
+      console.error('No value');
+      return;
+    }
+
+    let current;
+    let count = 0;
+    current = this.head;
+    while (current) {
+
+         // If index is 0
+      if (current.data === value) {
+        this.insertAtIndex(data, count);
+        return;
+      }
+      current = current.next;
+      count++;
+    }
+    return - 1;
+  }
+
+  // Insert After a node with value
+  insertAfter(value, data) {
+    // If index is out of range
+    if (!value) {
+      console.error('No value');
+      return;
+    }
+
+    let current;
+    let count = 0;
+    current = this.head;
+    while (current) {
+
+          // If index is 0
+      if (current.data === value) {
+        this.insertAtIndex(data, count + 1);
+        return;
+      }
+      current = current.next;
+      count++;
+    }
+    return - 1;
   }
 
   //Insert at index

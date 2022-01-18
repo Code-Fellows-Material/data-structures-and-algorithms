@@ -30,10 +30,9 @@ describe('Tests linked list functionality.', () => {
   it('Can properly insert multiple nodes into the linked list', () => {
     const TestLinkedList = new LinkedList();
     TestLinkedList.insertFirst('test1');
-    TestLinkedList.insertLast('test2');
+    TestLinkedList.append('test2');
     expect(TestLinkedList.getAt(0)).toBe('test1');
     expect(TestLinkedList.getAt(1)).toBe('test2');
-    
   })
 
   it('Will return true when finding a value within the linked list that exists', () => {
@@ -49,6 +48,56 @@ describe('Tests linked list functionality.', () => {
     testList.printToString();
     expect(consoleSpy).toHaveBeenCalledWith('{\"data\":300,\"next\":{\"data\":200,\"next\":{\"data\":100,\"next\":null}}}');
   })
+
+  it('Can successfully add a node to the end of the linked list', () => {
+    testList.append('test2');
+    expect(testList.getAt(3)).toBe('test2');  
+  })
+
+  it('Can successfully add multiple nodes to the end of a linked list', () => {
+    const TestLinkedList = new LinkedList();
+    TestLinkedList.insertFirst('test1');
+    TestLinkedList.append('test2');
+    TestLinkedList.insertFirst('first');
+    TestLinkedList.append('test3');
+    expect(TestLinkedList.getAt(2)).toBe('test2'); 
+    expect(TestLinkedList.getAt(3)).toBe('test3'); 
+  })
+
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+    const TestLinkedList = new LinkedList();
+    TestLinkedList.insertFirst('test1');
+    TestLinkedList.append('test2');
+    TestLinkedList.insertFirst('first');
+    TestLinkedList.insertBefore('test2', 'HI!')
+    TestLinkedList.printListData();
+    expect(TestLinkedList.getAt(2)).toBe('HI!'); 
+  })
+
+  it('Can successfully insert a node before the first node of a linked list', () => {
+    const TestLinkedList = new LinkedList();
+    TestLinkedList.insertFirst('test1');
+    TestLinkedList.append('test2');
+    TestLinkedList.insertFirst('first');
+    expect(TestLinkedList.getAt(0)).toBe('first');
+  })
+
+  it('Can successfully insert after a node in the middle of the linked list', () => {
+    const TestLinkedList = new LinkedList();
+    TestLinkedList.insertFirst('test1');
+    TestLinkedList.append('test2');
+    TestLinkedList.insertFirst('first');
+    TestLinkedList.insertAfter('test1', 'HI!');
+    expect(TestLinkedList.getAt(2)).toBe('HI!'); 
+  })
   
+  it('Can successfully insert a node after the last node of the linked list', () => {
+    const TestLinkedList = new LinkedList();
+    TestLinkedList.insertFirst('test1');
+    TestLinkedList.append('test2');
+    TestLinkedList.insertFirst('first');
+    TestLinkedList.insertAfter('test2', 'HI!')
+    expect(TestLinkedList.getAt(3)).toBe('HI!'); 
+  })
 })
 
