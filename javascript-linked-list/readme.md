@@ -1,12 +1,12 @@
 # Challenge Summary
 
-## linked-list-insertions
+## linked-list-kth
 <!-- Description of the challenge -->
-append, insert before, insert after
+k-th value from the end of a linked list.
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![linked-list-insertions](linked-list-insertions.jpg)
+![linked-list-kth](linked-list-kth.jpg)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Each solution uses a single while loop to move through the list, checking against a condition
