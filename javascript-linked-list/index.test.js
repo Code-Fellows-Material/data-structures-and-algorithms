@@ -98,6 +98,46 @@ describe('Tests linked list functionality.', () => {
     TestLinkedList.insertFirst('first');
     TestLinkedList.insertAfter('test2', 'HI!')
     expect(TestLinkedList.getAt(3)).toBe('HI!'); 
+  })  
+
+  it('Where k is greater than the length of the linked list', () => {
+    const TestLinkedList = new LinkedList();
+    TestLinkedList.insertFirst('test1');
+    TestLinkedList.append('test2');
+    TestLinkedList.append('test3');
+    expect(TestLinkedList.kthFromEnd(5)).toBe(-1); 
+  })
+
+  it('Where k and the length of the list are the same', () => {
+    const TestLinkedList = new LinkedList();
+    TestLinkedList.insertFirst('test1');
+    TestLinkedList.append('test2');
+    TestLinkedList.append('test3');
+    TestLinkedList.printListData();
+    expect(TestLinkedList.kthFromEnd(3)).toBe('test1'); 
+  })
+
+  it('Where k is not a positive integer', () => {
+    const TestLinkedList = new LinkedList();
+    expect(TestLinkedList.kthFromEnd(3)).toBe(-1); 
+  })
+
+  it('Where the linked list is of a size 1', () => {
+    const TestLinkedList = new LinkedList();
+    TestLinkedList.insertFirst('test1');
+    expect(TestLinkedList.kthFromEnd(1)).toBe('test1'); 
+  })
+
+  it('where k is not at the end, but somewhere in the middle of the linked list', () => {
+    const TestLinkedList = new LinkedList();
+    TestLinkedList.insertFirst('test1');
+    TestLinkedList.append('test2');
+    TestLinkedList.append('test3');
+    TestLinkedList.append('test4');
+    TestLinkedList.append('test5');
+    TestLinkedList.append('test6');
+    TestLinkedList.append('test7');
+    expect(TestLinkedList.kthFromEnd(4)).toBe('test4'); 
   })
 })
 

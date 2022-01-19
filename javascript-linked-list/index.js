@@ -150,6 +150,28 @@ class LinkedList {
     return null;
   }
 
+   //Get at index
+  kthFromEnd(k) {
+    let current = this.head;
+    let count = 0;
+
+    if (k < 0 || k > this.size) {
+      console.error('k out of range');
+      return -1;
+    }
+
+    let index = this.size - k;
+
+    while (current) {
+      if (count === index) {
+        return current.data;
+      }
+      current = current.next;
+      count++;
+    }
+    return null;
+  }
+
   //Remove at index
   removeAt(index) {
     if (index < 0 || index > this.size) {
