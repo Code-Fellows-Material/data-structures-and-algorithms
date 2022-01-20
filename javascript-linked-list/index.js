@@ -216,6 +216,33 @@ class LinkedList {
   printToString(){
     console.log(JSON.stringify(this.head));
   }
+
+  //Merge two lists
+  zipLists(TestLinkedListA, TestLinkedListB){
+    if(!(TestLinkedListA || TestLinkedListB)) return;
+
+    let tempNode;
+    let currentA = TestLinkedListA.head;
+    let currentB = TestLinkedListA.head;
+
+    while (currentA) {
+      tempNode = currentA.next;
+
+      currentA.next = currentB
+      
+      currentB = currentB.next;
+      tempNode.next = currentB.next;
+    }
+
+    while (currentB) {
+      
+      currentA.next = currentB
+      currentB = currentB.next;
+    }
+
+    return TestLinkedListA;
+  }
+
 }
 
 module.exports = LinkedList;
