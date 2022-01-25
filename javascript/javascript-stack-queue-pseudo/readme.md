@@ -17,3 +17,5 @@
 
   - Time: O(n) because the complexity grows linearly as the size does
   - Space: O(1) because the additional variables needed does not grow, regardless of the size of the queue. 
+
+-Kellen Linse
