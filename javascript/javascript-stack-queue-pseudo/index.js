@@ -65,12 +65,13 @@ class PseudoQueue {
     while(this.addStack.top){
       this.callStack.push(this.addStack.pop());
     }
-    this.callStack.pop();
+    let returnVar = this.callStack.pop();
     this.front = this.callStack.top;
     while(this.callStack.top){
       this.addStack.push(this.callStack.pop());
     }
     this.back = this.addStack.top;
+    return returnVar;
   }
 }
 
