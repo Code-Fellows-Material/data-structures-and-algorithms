@@ -139,5 +139,26 @@ describe('Tests linked list functionality.', () => {
     TestLinkedList.append('test7');
     expect(TestLinkedList.kthFromEnd(4)).toBe('test4'); 
   })
+
+  // it('zip two linked list', () => {
+  //   const TestLinkedListA = new LinkedList();
+  //   TestLinkedListA.insertFirst('Atest1');
+  //   TestLinkedListA.append('Atest2');
+  //   TestLinkedListA.append('Atest3');
+  //   TestLinkedListA.append('Atest4');
+
+  //   const TestLinkedListB = new LinkedList();
+  //   TestLinkedListB.insertFirst('Btest1');
+  //   TestLinkedListB.append('Btest2');
+  //   TestLinkedListB.append('Btest3');
+  //   TestLinkedListB.append('Btest4');
+
+  //   let zipListsList = new LinkedList();
+
+  //   let zippedList = zipListsList.zipLists(TestLinkedListA, TestLinkedListB);
+
+  //   zippedList.printListData();
+  //   expect(zippedList).toBe(zippedList); 
+  // })
 })
 
