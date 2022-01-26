@@ -6,29 +6,27 @@ describe('Tests for Queue', () => {
   it('Can successfully enqueue dog into a queue', () => {
     let queue = new AnimalShelter();
     queue.enqueue('dog');
-    expect(queue.dogQueue.front.data).toBeDefined();
+    expect(queue.dogStack.top.data).toBeDefined();
   })
 
   it('Can successfully enqueue dog into a queue', () => {
     let queue = new AnimalShelter();
     queue.enqueue('cat');
-    expect(queue.catQueue.front.data).toBeDefined();
+    expect(queue.catStack.top.data).toBeDefined();
   })
   
   it('Can successfully enqueue multiple cats into a queue', () => {
     let queue = new AnimalShelter();
     queue.enqueue('cat');
     queue.enqueue('cat');
-    expect(queue.catQueue.front.data).toBeDefined();
-    expect(queue.catQueue.back.data).toBeDefined();
+    expect(queue.catStack.top.data).toBeDefined();
   })
 
   it('Can successfully enqueue multiple dogs into a queue', () => {
     let queue = new AnimalShelter();
     queue.enqueue('dog');
     queue.enqueue('dog');
-    expect(queue.dogQueue.front.data).toBeDefined();
-    expect(queue.dogQueue.back.data).toBeDefined();
+    expect(queue.dogStack.top.data).toBeDefined();
   })
 
   it('Can successfully dequeue out of a queue the expected value', () => {

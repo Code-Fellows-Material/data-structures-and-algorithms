@@ -1,18 +1,18 @@
 'use strict'
 
-const Queue = require('./queue')
+const Stack = require('./stack')
 
 class AnimalShelter {
   constructor(){
-    this.dogQueue = new Queue();
-    this.catQueue = new Queue();
+    this.dogStack = new Stack();
+    this.catStack = new Stack();
   }
 
   enqueue(animal){
     if(!(animal === 'cat' || animal === 'dog')) return null
     animal === 'cat' ? 
-      this.catQueue.enqueue(`Cat #${Math.floor(Math.random() * 10) + 1}`) : 
-      this.dogQueue.enqueue(`Dog #${Math.floor(Math.random() * 10) + 1}`);
+      this.catStack.push(`Cat #${Math.floor(Math.random() * 10) + 1}`) : 
+      this.dogStack.push(`Dog #${Math.floor(Math.random() * 10) + 1}`);
 
   }
 
@@ -20,8 +20,8 @@ class AnimalShelter {
     if(!(perf === 'cat' || perf === 'dog')) return null
 
     return perf === 'cat' ? 
-      this.catQueue.dequeue() : 
-      this.dogQueue.dequeue();
+      this.catStack.pop() : 
+      this.dogStack.pop();
   }
 }
 

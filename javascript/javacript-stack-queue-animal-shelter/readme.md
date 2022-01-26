@@ -1,9 +1,10 @@
-# stack-pseudo-queue
+# stack-queue-animal-shelter
 
 --- 
 
 ## stack-pseudo-queue
-- Write a class called PseudoQueue that implements a standard queue interface (enqueue and dequeue), but uses two stack instances instead to manage the queue.
+- Create a class called AnimalShelter which holds only dogs and cats.
+- The shelter operates using a first-in, first-out approach.
 
  ---
 
@@ -12,10 +13,10 @@
 
 ## Approach & Efficiency
 
-  - Enqueueing was straight forward, You just need to track the queue's front property differently, depending if anything is in your queue or not.
-  - Dequeueing took a little more effort, one stack needs to be emptied into the other, then the top of the second stack needs saved to a variable, before returning the rest of that stack to the previous stack and returning that saved variable.
-
+  - Enqueueing was straight forward, You check for animal, add that animal to their respective stack, return null if animal doesn't have a stack.
+  - Dequeueing was straight forward, You check for animal, pop the top animal off their respective stack, return null if animal doesn't have a stack.
+  
   - Time: O(n) because the complexity grows linearly as the size does
-  - Space: O(1) because the additional variables needed does not grow, regardless of the size of the queue. 
+  - Space: O(1) no additional variables are needed.
 
 -Kellen Linse
