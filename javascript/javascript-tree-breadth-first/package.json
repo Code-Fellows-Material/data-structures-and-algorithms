@@ -1,0 +1,15 @@
+{
+  "name": "javascript-tree-max",
+  "version": "1.0.0",
+  "description": "- Find the Maximum Value in a Binary Tree",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.4.7"
+  }
+}
