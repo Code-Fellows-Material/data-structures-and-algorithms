@@ -1,16 +1,26 @@
-# tree-max
+# tree-fizz-buzz
 
 ## Problem:
-- Find the Maximum Value in a Binary Tree
+- Conduct “FizzBuzz” on a k-ary tree while traversing through it to create a new tree.
 
 ## Pseudo:
-  - Create ' max' variable to hold the largest number.
-      - create helper function to traverse tree,  which takes a node.
-        - if there is a left node call function recursively passing in the left node.
-        - if the current nodes value is greater than max value, make max value
-        - if there is a right node call function recursively passing in the right node.
-  - Call helper function, passing in the root node of the tree.
-  - return the 'max' variable.
+- pass sourceTree to function
+- create a node var from the root node of the source tree
+- create a newTree, pass in the node just created to the constructor
+- create a newNode var from the root node of the new tree
+- define a traversal function, accept two node arguments
+  - loop through the children of the node
+    - recursively calling the traversal function and passing in the node at children\[i] for both node and new node
+  - create a tempVar and set it equal to an empty string.
+  - check if the value at the current node is divisible by 3
+    - if so, set tempVar to "fizz";
+  - check if the value at the current node is divisible by 5
+    - if so, add "buzz" to tempVar
+- check tempVar
+  - if truthy, set newNode.value to tempVar
+  - if falsey, set newNode.value to node.value
+- call the traverse function passing in node and newNode
+- return newTree
 
  ---
 
