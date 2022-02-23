@@ -17,10 +17,10 @@ The time and space complexity for reading and writing in a Hashtable is 0(1)
 
   - The Hashtable constructor takes one argument, a number which defines the size of the hashtable. If no argument is give, the constructor defaults to 53.
 
-  - `.set(key, value)` Takes in a key and a value, and places them in the hashtable
+  - `.addAndCheck(key)` Takes in a key, Hash the key. Check if the key exists, if so, return the key. If not add the key to the table, then return false.
 
-  - `.get(key)` takes in a key and returns a value if the key is present, returns `undefined` if no key is present.
+  - `.removePunctuation(str)` takes in a string, removes puntuation, returns the string. 
 
-  - `.contains(key)` takes in a key and returns true or false if the key is present.
+  - `_hash(key)` takes in a key, returns it's index in the hashmap.
 
-  - `.keys()` returns an array with all keys present in the hashtable.
+  - ` repeatCheck(str)` Takes in a string, returns the first repeated word, of false if no repeats.
